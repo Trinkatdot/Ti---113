@@ -24,7 +24,7 @@ function lernumeros() {
             }
         }
     }
-    return alert(`numeros interiros:${num.join(",")}`);
+    return alert(`numeros interiros: ${num.join(", ") + (".")}`);
 }
 
 lernumeros()
