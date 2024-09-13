@@ -8,7 +8,7 @@ encontrado dentro de outra string*/
 function verificarvogais() {
     let letras = [];
     let vogais = 0;
-    let consoantes = 0;
+    let consoantes = [];
 
     //leitura de letra no vetor de letras
     for (let i = 0; i < 5; i++) {
@@ -19,14 +19,14 @@ function verificarvogais() {
     for (let j = 0; j < letras.length; j++) {
         //converto o texto pra maiúsculo
         let letra = letras[j].toUpperCase();
-        //Verifico se tem alguma vogal
+        //Verifico se tem alguma vogal e guada elas
         if (["A", "E", "I", "O", "U"].includes(letra)) {
             vogais++;
-        } else {
+        } else { //adiciona oque não for vogal a lista de consoantes
             consoantes.push(letra);
         }
     }
-    alert("Foram lidas " + Vogais + " vogais! e Consoantes: " + consoantes.join(", "));
+    alert("Foram lidas " + Vogais.length + " vogais! e Consoantes: " + consoantes.join(", "));
     
 }
 
