@@ -1,48 +1,26 @@
-/*Crie um algoritmo que leia um vetor de 10 letras, e diga quantas 
-consoantes foram lidas e mostre essas consoantes.
-*/
-let letras = [];
-let vogal = [];
-let cont = 0;
-let mensagem = "";
-for (let i = 0; i < 10; i += 1) {
-    let val = prompt("informe uma letra");
-    letras[i] = val;
-}
-for (j = 0; j < 10; j++) {
-    let val = letras[j].toUpperCase();
-    if (!(val == "A" || val == "E" || val == "I" || val == "O" || val == "U")) {
-        cont ++;
-        mensagem += val + "\n"
+function verificarVogais() {
+    let letras = [];
+    let contadorVogais = 0;
+    let consoantes = [];
+
+    // Leitura de 10 letras no vetor de letras
+    for (let i = 0; i < 10; i++) {
+        let letra = prompt("Informe uma Letra: ");
+        letras.push(letra);
     }
-} alert(mensagem + cont + " consoantes");
 
-//
-
-let letras = [];
-let contador = 0;
-let mensagem = "";
-
-//leitura de uma letra no vetor de letras
-for (let i = 0; i < 10; i++) {
-    let letra = prompt("Informe uma Letra: ");
-    letras.push(letra);
-}
-
-for (let j = 0; j < letras.length; j++) {
-    //converto o texto pra maiúsculo
-    let letra = letras[j].toUpperCase();
-    //Verifico se tem alguma vogal
-    let temA = (letra == "A"); // true ou false
-    let temE = (letra == "E"); // true ou false
-    let temI = (letra == "I"); // true ou false
-    let temO = (letra == "O"); // true ou false
-    let temU = (letra == "U"); // true ou false
-    
-    //se tiver alguma vogal ele não entra no if
-    if ((temA || temE || temI || temO || temU) == false) {
-        contador += 1;
-        mensagem += letra + "\n";
+    // Verificação de vogais e consoantes
+    for (let j = 0; j < letras.length; j++) {
+        let letra = letras[j].toUpperCase();
+        if (["A", "E", "I", "O", "U"].includes(letra)) {
+            contadorVogais++;
+        } else {
+            consoantes.push(letra);
+        }
     }
+
+    alert("Foram lidas " + contadorVogais + " vogais!");
+    alert("Consoantes: " + consoantes.join(", "));
 }
-alert(mensagem + "\n" + "Teve " + contador + " Consoantes!");
+
+verificarVogais();
