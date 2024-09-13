@@ -11,7 +11,7 @@ function verificarvogais() {
     let consoantes = [];
 
     //leitura de letra no vetor de letras
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
         let letra = prompt("Informe uma Letra: ");
         letras.push(letra);
     }
@@ -19,14 +19,14 @@ function verificarvogais() {
     for (let j = 0; j < letras.length; j++) {
         //converto o texto pra maiúsculo
         let letra = letras[j].toUpperCase();
-        //Verifico se tem alguma vogal e guada elas
+        //Verifico se tem alguma vogal e guarda elas
         if (["A", "E", "I", "O", "U"].includes(letra)) {
             vogais++;
         } else { //adiciona oque não for vogal a lista de consoantes
             consoantes.push(letra);
         }
     }
-    alert("Foram lidas " + Vogais.length + " vogais! e Consoantes: " + consoantes.join(", "));
+    alert("Foram lidas " + vogais + " vogais! e as Consoantes São: " + consoantes.join(", "));
     
 }
 
