@@ -11,7 +11,8 @@ function menuquantos() {
     let numeros = [];
     let pares = [];
     let impares = [];
-    
+    continuar = true;
+
     let quantosNumeros = parseInt(prompt("Quantos números deseja cadastrar? Escolha entre 5, 15, 25, ou 50:"));
     // Validar a escolha do usuário
     if (![5, 15, 25, 50].includes(quantosNumeros)) {
@@ -38,7 +39,7 @@ function menuquantos() {
             }
             // Guarda o número
             numeros.push(numero);
-             break;
+            break;
         }
     }
 
@@ -52,24 +53,28 @@ function menuquantos() {
     }
 
     // Menu para exibir os números
-    let opcao = parseInt(prompt("Escolha uma opção para exibir:\n1 - A lista cadastrada\n2 - Somente os pares\n3 - Somente os ímpares"));
+    do {
+        // Menu para exibir os números
+        let opcao = parseInt(prompt("Escolha uma opção para exibir:\n1 - A lista cadastrada\n2 - Somente os pares\n3 - Somente os ímpares"));
 
-    switch (opcao) {
-        case 1:
-            alert(`Lista cadastrada: ${numeros.join(", ")}`);
-            break;
-        case 2:
+        switch (opcao) {
+            case 1:
+                alert(`Lista cadastrada: ${numeros.join(", ")}`);
+                break;
+            case 2:
+                alert(`Números pares: ${pares.join(", ")}`);
+                break;
+            case 3:
+                alert(`Números ímpares: ${impares.join(", ")}`);
+                break;
+            default:
+                alert("Opção inválida.");
+                break;
+        }
 
-            alert(`Números pares: ${pares.join(", ")}`);
-            break;
-        case 3:
+        // Pergunta se deseja verificar outra lista
+        continuar = confirm("Deseja verificar outra opção? OK para continuar, Cancelar para sair.");
 
-            alert(`Números ímpares: ${impares.join(", ")}`);
-            break;
-        default:
-            alert("Opção inválida.");
-            break;
-    }
+    } while (continuar);
 }
-
 menuquantos();
